@@ -20,6 +20,9 @@ function getMetadata(link, callback) {
         description: obj.description || obj.ogDescription || 'No description',
         image: obj.metaImg || obj.ogImg || obj.tagImg
       };
+      if (res.image.startsWith('//')) {
+        res.image = 'http:' + res.image;
+      }
       callback(null, res);
     }
   });
