@@ -16,8 +16,8 @@ function getMetadata(link, callback) {
     } else {
       var res = {
         link: link,
-        title: obj.title || obj.ogTitle,
-        description: obj.description || obj.ogDescription,
+        title: obj.title || obj.ogTitle || 'No title',
+        description: obj.description || obj.ogDescription || 'No description',
         image: obj.metaImg || obj.ogImg || obj.tagImg
       };
       callback(null, res);
